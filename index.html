@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Excel / WPS Quick Quiz — 25 Questions</title>
+
+  <!-- NOTE: This must match your CSS filename in the folder -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div>
+        <h1 class="title">Excel / WPS Quick Quiz — 25 Questions</h1>
+        <div class="subtitle">Shuffle every load · One question at a time · Friendly explanations</div>
+      </div>
+      <div class="meta">
+        <div class="badge">English</div>
+        <div class="small">Source: Ready-Reckoner (PDF)</div>
+      </div>
+    </header>
+
+    <main class="card" id="app" role="application" aria-labelledby="title">
+      <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+      <div class="q-header">
+        <div id="qNum" class="qnum">Question 1 / 25</div>
+        <div id="score" class="score">Score: 0</div>
+      </div>
+
+      <section id="questionCard" class="question-card" tabindex="0" aria-live="polite">
+        <div id="questionText" class="question">Loading...</div>
+        <form id="optionsForm" class="options" aria-label="Answer choices"></form>
+
+        <div id="explainBox" class="explain" style="display:none" role="status"></div>
+
+        <div class="controls">
+          <div class="left-controls">
+            <button id="checkBtn" class="btn primary">Check Answer</button>
+            <button id="prevBtn" class="btn ghost">Previous</button>
+            <button id="nextBtn" class="btn ghost">Next</button>
+          </div>
+
+          <div class="right-controls">
+            <button id="reviewBtn" class="btn secondary">Review Answers</button>
+            <button id="retryBtn" class="btn ghost">Retry (Reshuffle)</button>
+            <button id="clearBtn" class="btn ghost" title="Clear saved progress">Clear progress</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultArea" class="card hidden">
+        <h2 id="finalScore"></h2>
+        <p id="finalMsg" class="small"></p>
+        <div class="result-actions">
+          <button id="retryEndBtn" class="btn primary">Retry</button>
+          <button id="reviewEndBtn" class="btn secondary">Review Answers</button>
+        </div>
+      </section>
+
+      <section id="reviewArea" class="hidden">
+        <h3>Review</h3>
+        <div id="reviewList" class="review-list"></div>
+        <div style="margin-top:10px;">
+          <button id="closeReviewBtn" class="btn ghost">Close</button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="small">Keyboard: Tab to navigate, Enter to select/activate.</div>
+        <div class="small">Local save used. Click "Clear progress" to reset.</div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
